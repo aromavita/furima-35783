@@ -27,15 +27,12 @@ Things you may want to cover:
 |   Column           |   Type       |   Options                            |
 | ------------------ | ------------ | ------------------------------------ |
 | nickname           |  string      | null:false                           |
-| password           |  string      | null:false                           |
-| encrypted_password |  string      | null:false                           |
 | family_name        |  string      | null:false                           |
 | first_name         |  string      | null:false                           |
 | family_name_kana   |  string      | null:false                           |
 | first_name_kana    |  string      | null:false                           |
-| birth_year         |  string      | null:false                           |
-| birth_month        |  string      | null:false                           |
-| birth_day          |  string      | null:false                           |
+| birthday           |  date        | null:false                           |
+
 
 ## Association
 - has_many :items
@@ -46,13 +43,12 @@ Things you may want to cover:
 <!-- ## itemsテーブル -->
 |   Column           |   Type       |   Options                            |
 | ------------------ | ------------ | ------------------------------------ |
-| user               |  reference   | null:false, foreign_key: true        |
-| category           |  pulldown    |                                      |
-| status             |  pulldown    |                                      |
-| shipping_fee       |  pulldown    |                                      | 
-| shipping_from      |  pulldown    |                                      |
-| shipping_date      |  pulldown    |                                      |
-| Image              |              |                                      |
+| user               |  references  | null:false, foreign_key: true        |
+| category_id        |  integer     | null:false                           |
+| status_id          |  integer     | null:false                           |
+| shipping_fee_id    |  integer     | null:false                           | 
+| shipping_from_id   |  integer     | null:false                           |
+| shipping_date_id   |  integer     | null:false                           |
 
 ## Association
 
@@ -62,14 +58,38 @@ Things you may want to cover:
 
 
 <!-- ## commentsテーブル -->
-|   Column     |   Type       |   Options               |
-| ------------ | ------------ | ----------------------- |
-| user         | references   |                         |
-| item         | references   |                         |
-| text         | text         |                         |
+|   Column     |   Type       |   Options                     |
+| ------------ | ------------ | ----------------------------- |
+| user         | references   | null:false, foreign_key: true |
+| item         | references   | null:false, foreign_key: true |
+| text         | text         | null:false                    |
 
 ## Association
 
 - belongs_to :user
 - belongs_to :item
 
+<!-- ## ordersテーブル -->
+|   Column     |   Type       |   Options                         |
+| ------------ | ------------ | --------------------------------- |
+| postcode     | integer      | null:false                        |
+| prefecture   | integer      | null:false                        |
+| city         | integer      | null:false                        |
+| house_number | integer      | null:false                        |
+| building     | integer      | null:false                        |
+| phone_number | integer      | null:false                        |
+
+## Association
+
+- belongs_to :user
+
+
+<!-- ## statusテーブル -->
+|   Column     |   Type       |   Options                     |
+| ------------ | ------------ | ----------------------------- |
+| item_id      | references   | null:false, foreign_key: true |
+| status       | string       |                               |
+
+## Association
+
+- belongs_to :item
