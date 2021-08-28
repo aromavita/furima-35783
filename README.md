@@ -22,3 +22,54 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+<!-- ## usersテーブル -->
+|   Column           |   Type       |   Options                            |
+| ------------------ | ------------ | ------------------------------------ |
+| nickname           |  string      | null:false                           |
+| password           |  string      | null:false                           |
+| encrypted_password |  string      | null:false                           |
+| family_name        |  string      | null:false                           |
+| first_name         |  string      | null:false                           |
+| family_name_kana   |  string      | null:false                           |
+| first_name_kana    |  string      | null:false                           |
+| birth_year         |  string      | null:false                           |
+| birth_month        |  string      | null:false                           |
+| birth_day          |  string      | null:false                           |
+
+## Association
+- has_many :items
+- has_many :comments
+
+
+
+<!-- ## itemsテーブル -->
+|   Column           |   Type       |   Options                            |
+| ------------------ | ------------ | ------------------------------------ |
+| user               |  reference   | null:false, foreign_key: true        |
+| category           |  pulldown    |                                      |
+| status             |  pulldown    |                                      |
+| shipping_fee       |  pulldown    |                                      | 
+| shipping_from      |  pulldown    |                                      |
+| shipping_date      |  pulldown    |                                      |
+| Image              |              |                                      |
+
+## Association
+
+- has_many :comments
+- belongs_to :user
+
+
+
+<!-- ## commentsテーブル -->
+|   Column     |   Type       |   Options               |
+| ------------ | ------------ | ----------------------- |
+| user         | references   |                         |
+| item         | references   |                         |
+| text         | text         |                         |
+
+## Association
+
+- belongs_to :user
+- belongs_to :item
+
