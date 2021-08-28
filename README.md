@@ -27,6 +27,8 @@ Things you may want to cover:
 |   Column           |   Type       |   Options                            |
 | ------------------ | ------------ | ------------------------------------ |
 | nickname           |  string      | null:false                           |
+| password           |  string      | null:false                           |
+| encrypted_password |  string      | null:false                           |
 | family_name        |  string      | null:false                           |
 | first_name         |  string      | null:false                           |
 | family_name_kana   |  string      | null:false                           |
@@ -39,11 +41,12 @@ Things you may want to cover:
 - has_many :comments
 
 
-
 <!-- ## itemsテーブル -->
 |   Column           |   Type       |   Options                            |
 | ------------------ | ------------ | ------------------------------------ |
 | user               |  references  | null:false, foreign_key: true        |
+| item               |  string      | null:false, foreign_key: true        |
+| description        |  text        |
 | category_id        |  integer     | null:false                           |
 | status_id          |  integer     | null:false                           |
 | shipping_fee_id    |  integer     | null:false                           | 
@@ -53,6 +56,7 @@ Things you may want to cover:
 ## Association
 
 - has_many :comments
+- has_many :status
 - belongs_to :user
 
 
@@ -72,24 +76,25 @@ Things you may want to cover:
 <!-- ## ordersテーブル -->
 |   Column     |   Type       |   Options                         |
 | ------------ | ------------ | --------------------------------- |
-| postcode     | integer      | null:false                        |
+| post_code    | string       | null:false                        |
 | prefecture   | integer      | null:false                        |
 | city         | integer      | null:false                        |
 | house_number | integer      | null:false                        |
 | building     | integer      | null:false                        |
-| phone_number | integer      | null:false                        |
+| phone_number | string       | null:false                        |
 
 ## Association
 
-- belongs_to :user
+- belongs_to :status
 
 
 <!-- ## statusテーブル -->
 |   Column     |   Type       |   Options                     |
 | ------------ | ------------ | ----------------------------- |
-| item_id      | references   | null:false, foreign_key: true |
-| status       | string       |                               |
+| item         | references   | null:false, foreign_key: true |
+| user         | references   | null:false, foreign_key: true |
 
 ## Association
 
 - belongs_to :item
+- belongs_to :user
