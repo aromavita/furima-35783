@@ -39,7 +39,7 @@ Things you may want to cover:
 ## Association
 - has_many :items
 - has_many :comments
-- has_many :statuses
+- has_many :orders
 
 
 <!-- ## itemsテーブル -->
@@ -59,7 +59,7 @@ Things you may want to cover:
 ## Association
 
 - has_many :comments
-- has_one :status
+- has_one :orders
 - belongs_to :user
 
 
@@ -76,7 +76,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-<!-- ## ordersテーブル -->
+<!-- ## addressesテーブル -->
 |   Column      |   Type       |   Options                            |
 | ------------  | ------------ | ------------------------------------ |
 | post_code     | string       | null:false                           |
@@ -85,14 +85,14 @@ Things you may want to cover:
 | house_number  | string       | null:false                           |
 | building      | string       |                                      |
 | phone_number  | string       | null:false                           |
-| status        | references   | null:false, foreign_key: true        |
+| orders        | references   | null:false, foreign_key: true        |
 
 ## Association
-belongs_to :status
+belongs_to :orders
 
 
 
-<!-- ## statusesテーブル -->
+<!-- ## ordersテーブル -->
 |   Column     |   Type       |   Options                     |
 | ------------ | ------------ | ----------------------------- |
 | item         | references   | null:false, foreign_key: true |
@@ -102,4 +102,4 @@ belongs_to :status
 
 - belongs_to :item
 - belongs_to :user
-- has_one :order
+- has_one :address

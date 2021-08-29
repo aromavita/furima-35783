@@ -46,7 +46,7 @@
                         <mxPoint x="510" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="16" value="orders テーブル" style="swimlane;" parent="1" vertex="1">
+                <mxCell id="16" value="addresses テーブル" style="swimlane;" parent="1" vertex="1">
                     <mxGeometry x="550" y="450" width="260" height="230" as="geometry">
                         <mxRectangle x="40" y="50" width="110" height="23" as="alternateBounds"/>
                     </mxGeometry>
@@ -54,7 +54,7 @@
                 <mxCell id="17" value="&lt;font style=&quot;font-size: 14px&quot;&gt;post_code (string, NOT NULL)&lt;br&gt;prefecture_id (integer)&lt;br&gt;city (string, NOT NULL)&lt;br&gt;house_number (string, NOT NULL)&lt;br&gt;building (string)&lt;br&gt;phone_number (string, NOT NULL)&lt;br&gt;status (references)&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="16" vertex="1">
                     <mxGeometry x="12.5" y="65" width="230" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="statuses テーブル" style="swimlane;" vertex="1" parent="1">
+                <mxCell id="18" value="orders テーブル" style="swimlane;startSize=23;" vertex="1" parent="1">
                     <mxGeometry x="310" y="450" width="200" height="150" as="geometry">
                         <mxRectangle x="40" y="50" width="110" height="23" as="alternateBounds"/>
                     </mxGeometry>
