@@ -27,7 +27,7 @@ Things you may want to cover:
 |   Column           |   Type       |   Options                            |
 | ------------------ | ------------ | ------------------------------------ |
 | nickname           |  string      | null:false                           |
-| email              |  string      | null:false                           |
+| email              |  string      | null:false, unique:true              |
 | encrypted_password |  string      | null:false                           |
 | family_name        |  string      | null:false                           |
 | first_name         |  string      | null:false                           |
@@ -39,6 +39,7 @@ Things you may want to cover:
 ## Association
 - has_many :items
 - has_many :comments
+- has_one :status
 
 
 <!-- ## itemsテーブル -->
@@ -46,12 +47,14 @@ Things you may want to cover:
 | ------------------ | ------------ | ------------------------------------ |
 | user               |  references  | null:false, foreign_key: true        |
 | name               |  string      | null:false                           |
-| description        |  text        |                                      |
+| description        |  text        | null:false                           |
 | category_id        |  integer     | null:false                           |
 | quality_id         |  integer     | null:false                           |
 | shipping_fee_id    |  integer     | null:false                           | 
 | prefecture_id      |  integer     | null:false                           |
 | shipping_date_id   |  integer     | null:false                           |
+| price              |  integer     | null:false                           |
+
 
 ## Association
 
@@ -82,19 +85,22 @@ Things you may want to cover:
 | house_number  | string       | null:false                           |
 | building      | string       |                                      |
 | phone_number  | string       | null:false                           |
-
+| status        | references   | null:false, foreign_key: true        |
 
 ## Association
+has_one :status
 
-- belongs_to :status
 
 
 <!-- ## statusテーブル -->
 |   Column     |   Type       |   Options                     |
 | ------------ | ------------ | ----------------------------- |
 | item         | references   | null:false, foreign_key: true |
-| history      | integer      | null:false                    |
+| user         | references   | null:false, foreign_key: true |
+| order        | references   | null:false, foreign_key: true |
 
 ## Association
 
 - belongs_to :item
+- belongs_to :user
+- belongs_to :order
