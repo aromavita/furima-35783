@@ -27,7 +27,6 @@ Things you may want to cover:
 |   Column           |   Type       |   Options                            |
 | ------------------ | ------------ | ------------------------------------ |
 | nickname           |  string      | null:false                           |
-| password           |  string      | null:false                           |
 | encrypted_password |  string      | null:false                           |
 | family_name        |  string      | null:false                           |
 | first_name         |  string      | null:false                           |
@@ -45,8 +44,8 @@ Things you may want to cover:
 |   Column           |   Type       |   Options                            |
 | ------------------ | ------------ | ------------------------------------ |
 | user               |  references  | null:false, foreign_key: true        |
-| item               |  string      | null:false, foreign_key: true        |
-| description        |  text        |
+| name               |  string      | null:false                           |
+| description        |  text        |                                      |
 | category_id        |  integer     | null:false                           |
 | status_id          |  integer     | null:false                           |
 | shipping_fee_id    |  integer     | null:false                           | 
@@ -74,14 +73,15 @@ Things you may want to cover:
 - belongs_to :item
 
 <!-- ## ordersテーブル -->
-|   Column     |   Type       |   Options                         |
-| ------------ | ------------ | --------------------------------- |
-| post_code    | string       | null:false                        |
-| prefecture   | integer      | null:false                        |
-| city         | integer      | null:false                        |
-| house_number | integer      | null:false                        |
-| building     | integer      | null:false                        |
-| phone_number | string       | null:false                        |
+|   Column      |   Type       |   Options                            |
+| ------------  | ------------ | ------------------------------------ |
+| post_code     | string       | null:false                           |
+| prefecture_id | integer      | null:false                           |
+| city          | string       | null:false                           |
+| house_number  | string       | null:false                           |
+| building      | string       | null:false                           |
+| phone_number  | string       | null:false                           |
+| status        | references   | foreign_key: true                    |
 
 ## Association
 
