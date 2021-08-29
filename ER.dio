@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="SBeTpWiUitbdgiZ2SEFZ" name="ページ1">
-        <mxGraphModel dx="784" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1066" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -9,16 +9,16 @@
                         <mxRectangle x="40" y="50" width="110" height="23" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="3" value="&lt;font style=&quot;font-size: 14px&quot;&gt;nickname (string,NOT NULL)&lt;br&gt;email (string, NOT NULL)&lt;br&gt;password (string, NOT NULL)&lt;br&gt;family_name (string, NOT NULL)&lt;br&gt;first_name (string, NOT NULL)&lt;br&gt;family_name_kana (string, NOT NULL)&lt;br&gt;first_name_kana (string, NOT NULL)&lt;br&gt;birth_year (string, NOT NULL)&lt;br&gt;birth_month (string, NOT NULL)&lt;br&gt;birth_day (string, NOT NULL)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="2" vertex="1">
-                    <mxGeometry x="12.5" y="40" width="260" height="160" as="geometry"/>
+                <mxCell id="3" value="&lt;font style=&quot;font-size: 14px&quot;&gt;nickname (string,NOT NULL)&lt;br&gt;email (string, NOT NULL)&lt;br&gt;encrypted_password (string, NOT NULL)&lt;br&gt;family_name (string, NOT NULL)&lt;br&gt;first_name (string, NOT NULL)&lt;br&gt;family_name_kana (string, NOT NULL)&lt;br&gt;first_name_kana (string, NOT NULL)&lt;br&gt;birth_year (string, NOT NULL)&lt;br&gt;birth_month (string, NOT NULL)&lt;br&gt;birth_day (date, NOT NULL)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="2" vertex="1">
+                    <mxGeometry x="12.5" y="40" width="270" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="items テーブル" style="swimlane;" parent="1" vertex="1">
                     <mxGeometry x="510" y="60" width="290" height="230" as="geometry">
                         <mxRectangle x="40" y="50" width="110" height="23" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6" value="&lt;font style=&quot;font-size: 14px&quot;&gt;user (reference型)&lt;br&gt;category (pull down)&lt;br&gt;status (text)&lt;br&gt;shipping_fee (pull down)&lt;br&gt;shipping_from (pull down)&lt;br&gt;shipping_date (pull down)&lt;br&gt;Image&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="5" vertex="1">
-                    <mxGeometry x="12.5" y="65" width="180" height="110" as="geometry"/>
+                <mxCell id="6" value="&lt;font style=&quot;font-size: 14px&quot;&gt;user (reference型)&lt;br&gt;name (string, NOT NULL)&lt;br&gt;description (string, NOT NULL)&lt;br&gt;category_id (integer)&lt;br&gt;quality_id (integer)&lt;br&gt;shipping_fee_id (integer)&lt;br&gt;prefecture_id (integer)&lt;br&gt;shipping_date (integer)&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="5" vertex="1">
+                    <mxGeometry x="12.5" y="55" width="210" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="comments テーブル" style="swimlane;" parent="1" vertex="1">
                     <mxGeometry x="40" y="450" width="230" height="230" as="geometry">
@@ -51,7 +51,7 @@
                         <mxRectangle x="40" y="50" width="110" height="23" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="17" value="&lt;font style=&quot;font-size: 14px&quot;&gt;postcode (string, NOT NULL)&lt;br&gt;prefecture (string, NOT NULL)&lt;br&gt;city (string, NOT NULL)&lt;br&gt;house_number (string, NOT NULL)&lt;br&gt;address (string, NOT NULL)&lt;br&gt;building (string, NOT NULL)&lt;br&gt;phone_number (string, NOT NULL)&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="16" vertex="1">
+                <mxCell id="17" value="&lt;font style=&quot;font-size: 14px&quot;&gt;post_code (string, NOT NULL)&lt;br&gt;prefecture_id (integer)&lt;br&gt;city (string, NOT NULL)&lt;br&gt;house_number (string, NOT NULL)&lt;br&gt;address (string, NOT NULL)&lt;br&gt;building (string)&lt;br&gt;phone_number (string, NOT NULL)&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="16" vertex="1">
                     <mxGeometry x="12.5" y="50" width="230" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="status テーブル" style="swimlane;" vertex="1" parent="1">
@@ -59,7 +59,7 @@
                         <mxRectangle x="40" y="50" width="110" height="23" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="20" value="&lt;br&gt;item_id (references)&lt;br&gt;status　 (string)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="18">
+                <mxCell id="20" value="&lt;br&gt;item_id (references)&lt;br&gt;history　 (string)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="18">
                     <mxGeometry x="40" y="50" width="120" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;strokeWidth=2;rounded=1;entryX=0.426;entryY=-0.012;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="16">
