@@ -88,7 +88,7 @@ Things you may want to cover:
 | status        | references   | null:false, foreign_key: true        |
 
 ## Association
-has_one :status
+belongs_to :status
 
 
 
@@ -97,7 +97,6 @@ has_one :status
 | ------------ | ------------ | ----------------------------- |
 | item         | references   | null:false, foreign_key: true |
 | user         | references   | null:false, foreign_key: true |
-| order        | string       | null:false                    |
 
 ## Association
 
