@@ -39,7 +39,7 @@ Things you may want to cover:
 ## Association
 - has_many :items
 - has_many :comments
-- has_one :status
+- has_many :statuses
 
 
 <!-- ## itemsテーブル -->
@@ -92,15 +92,15 @@ has_one :status
 
 
 
-<!-- ## statusテーブル -->
+<!-- ## statusesテーブル -->
 |   Column     |   Type       |   Options                     |
 | ------------ | ------------ | ----------------------------- |
 | item         | references   | null:false, foreign_key: true |
 | user         | references   | null:false, foreign_key: true |
-| order        | references   | null:false, foreign_key: true |
+| order        | string       | null:false                    |
 
 ## Association
 
 - belongs_to :item
 - belongs_to :user
-- belongs_to :order
+- has_one :order
